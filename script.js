@@ -57,25 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
     });
 
-    const devSkipBtn = document.getElementById('dev-skip-btn');
-    if(devSkipBtn) {
-        devSkipBtn.addEventListener('click', () => {
-            startScreen.style.display = 'none';
-            sceneContainer.classList.remove('hidden');
-            document.body.classList.add('bg-gradient');
-            
-            // Skip directly to scene 3
-            currentScene = 3;
-            document.getElementById('scene-1').classList.remove('active-scene');
-            document.getElementById('scene-1').classList.add('hidden');
-            
-            const next = document.getElementById('scene-3');
-            next.classList.remove('hidden');
-            next.classList.add('active-scene');
-            initCinematicGallery();
-        });
-    }
-
     // Called by particle.js when heart has formed
     window.onHeartReady = function() {
         // Auto explode after 3 seconds
