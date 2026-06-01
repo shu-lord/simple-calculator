@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const text = `Dear Parami,
 
 I've met a lot of people in my life. I've talked to many, worked with many, learned from many. But very few people have ever made me feel understood, challenged, cared for, and comfortable all at the same time.
-
+(Very Few = You + Mom + Raheem)
 You did.
 
 There is something about you that is different.
