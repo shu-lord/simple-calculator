@@ -136,11 +136,11 @@ body {
     color: #e2e8f0; /* Light text for dark background */
     padding: 3rem; 
     border-radius: 20px;
-    max-width: 600px; 
-    max-height: 70vh; 
+    max-width: 800px; /* Made wider for larger text */
+    max-height: 75vh; 
     overflow-y: auto;
     box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-    font-size: 1.1rem; 
+    font-size: 1.3rem; /* Made text significantly larger */
     line-height: 1.8; 
     text-align: left;
     scroll-behavior: smooth;
@@ -456,9 +456,9 @@ body {
     /* Scene 2 (The Letter) */
     .parchment { 
         padding: 1.5rem; 
-        font-size: 1rem; 
-        max-width: 92vw; 
-        max-height: 75vh;
+        font-size: 1.15rem; /* Made text larger on mobile */
+        max-width: 95vw; 
+        max-height: 80vh; /* Gave it slightly more height on mobile */
     }
     .gift-text { font-size: 2.5rem; }
     
