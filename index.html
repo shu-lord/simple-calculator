@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Happy Birthday Parami 💗</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Audio element -->
+    <audio id="bg-music" loop>
+        <source src="assets/music/music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Authentication Screen -->
+    <div id="auth-screen" class="overlay-screen" style="background: black; z-index: 9999;">
+        <div class="auth-content">
+            <h2 style="color: #fff; font-family: 'Quicksand', sans-serif; margin-bottom: 20px;">Type the magic word to continue</h2>
+            <input type="password" id="magic-word-input" placeholder="..." style="padding: 10px 15px; font-size: 1.2rem; border-radius: 10px; border: none; outline: none; text-align: center; margin-bottom: 20px;">
+            <br>
+            <button id="auth-submit-btn" class="start-btn">Enter</button>
+            <p id="auth-error" style="color: #ff4081; margin-top: 15px; display: none;">That's not the magic word...</p>
+        </div>
+    </div>
+
+    <!-- Start Screen -->
+    <div id="start-screen" class="overlay-screen">
+        <div class="start-content">
+            <h1>For You, Parami ❤️</h1>
+            <p>Turn up your volume and click start 🎵</p>
+            <div style="display: flex; gap: 15px; justify-content: center; margin-top: 20px; flex-wrap: wrap;">
+                <button id="start-btn" class="start-btn">Start</button>
+                <button id="dev-skip-btn" class="start-btn" style="background: rgba(255,255,255,0.1); color: white;">Dev: Skip to Gallery</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Canvas for Particle Effect (1, 2, 3 Happy Birthday) -->
+    <canvas class="canvas" style="position:absolute;width:100%;height:100%;z-index:10;display:none;"></canvas>
+
+    <!-- "The Letter" button shown after heart explodes -->
+    <button id="letter-btn" class="hidden">The Letter 💌</button>
+
+    <!-- Scene Container (Initially hidden) -->
+    <div id="scene-container" class="hidden">
+        
+        <!-- Scene 1: Gift Box Reveal -->
+        <section id="scene-1" class="scene active-scene">
+            <div class="gift-box-container">
+                <div class="gift-box" id="gift-box">
+                    <div class="gift-lid"></div>
+                    <div class="gift-body">
+                        <div class="ribbon-vertical"></div>
+                        <div class="ribbon-horizontal"></div>
+                    </div>
+                </div>
+                <h2 class="gift-text hidden">Happy Birthday!</h2>
+                <button class="next-btn hidden" onclick="nextScene()">Next 💌</button>
+            </div>
+        </section>
+
+        <!-- Scene 2: Love Letter Typewriter -->
+        <section id="scene-2" class="scene hidden">
+            <div class="letter-container">
+                <div class="parchment">
+                    <p id="typewriter-text"></p>
+                </div>
+                <button class="next-btn hidden" id="letter-next-btn" onclick="nextScene()">Next 🌌</button>
+            </div>
+        </section>
+
+        <!-- Scene 3: Cinematic Scroll Photo Gallery -->
+        <section id="scene-3" class="scene hidden">
+            <!-- Background will be styled via CSS -->
+            <div id="gallery-scroll-container">
+                <div class="masonry-grid" id="masonry-grid">
+                    <!-- Images will be injected here by JS -->
+                </div>
+            </div>
+
+            <!-- Glassmorphism Modal for Photos -->
+            <div id="photo-modal" class="hidden">
+                <div class="glass-photo-card">
+                    <button id="close-modal-btn">✖</button>
+                    <img id="modal-image" src="" alt="Memory">
+                    <div class="modal-caption">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floating Heart Button (appears after 10s) -->
+            <button id="final-heart-btn" class="hidden">❤️</button>
+
+            <!-- Final Glassmorphism Note -->
+            <div id="final-note-modal" class="hidden">
+                <div class="glass-note-card parchment">
+                    <div class="final-note-content">
+                        <p>Thank you for every message, every call, every good morning, every late night conversation, every exam wish, and every moment you reminded me that I wasn't doing this alone.</p>
+                        <br>
+                        <p>Thank you for believing in me even when I wasn't fully believing in myself.</p>
+                        <br>
+                        <p>Thank you for staying through all my overthinking, complicated plans, random ideas, and the chaos that comes with me.</p>
+                        <br>
+                        <p>Thank you for every call, every laugh, every memory, every sunset, every little moment that somehow became important.</p>
+                        <br>
+                        <p>Thank you for caring about me even when you kept telling me not to care too much about you.</p>
+                        <br>
+                        <p>And most importantly, thank you for staying.</p>
+                        <br>
+                        <p>I don't think I'll ever be able to explain how much that means to me.</p>
+                        <br>
+                        <p class="highlight signature">Lovyaaa Hony 💗</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="particle.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
